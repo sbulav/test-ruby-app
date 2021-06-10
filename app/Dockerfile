@@ -11,7 +11,7 @@ USER app
 WORKDIR /app
 
 # Copy the code
-COPY --chown=app http_server.rb /app
+COPY --chown=app app/http_server.rb /app
 
 # Notify that we expose port 80
 EXPOSE 80
