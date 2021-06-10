@@ -1,11 +1,12 @@
-require 'socket'
+# frozen_string_literal: true
+require "socket"
 
-server  = TCPServer.new('0.0.0.0', 80)
+server  = TCPServer.new("0.0.0.0", 80)
 
 loop {
   client  = server.accept
   request = client.readpartial(2048)
-  
+
   method, path, version = request.lines[0].split
 
   puts "#{method} #{path} #{version}"
