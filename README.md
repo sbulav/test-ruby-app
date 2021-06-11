@@ -74,8 +74,8 @@ helm install http-server helm/chart
 2. Fork my github repo `https://github.com/sbulav/test-ruby-app`
 3. Create new [Personal Access Token](https://docs.docker.com/docker-hub/access-tokens/)
 4. Create 2 repository secrets:
-  - DOCKERHUB_USERNAME - Username of Docker hub user
-  - DOCKERHUB_TOKEN - Personal Access Token of Docker Hub user
+- DOCKERHUB_USERNAME - Username of Docker hub user
+- DOCKERHUB_TOKEN - Personal Access Token of Docker Hub user
 5. Start minikube by running following command:
 ```bash
 minikube start
@@ -85,7 +85,7 @@ minikube start
 minikube addons enable ingress
 ```
 7. Clone repository to your local development machine:
-```
+```bash
 git clone git@github.com:<USERNAME>/test-ruby-app.git
 ```
 8. Amend Helm values `helm/chart/values.yaml` to your need
@@ -108,8 +108,8 @@ Or install specific Image tag:
 helm install http-server helm/chart --set tag=1.0.0
 ```
 11. Wait until the application is up and running and open web page in browser:
-    ```bash
-minikube service http-server 
+```bash
+minikube service http-server
 ```
 12. (Optional) Access application via Ingress:
 ```bash
@@ -117,7 +117,7 @@ minikube service http-server
 sudo echo "$(minikube ip) http-server.local" >> /etc/hosts
 ```
 Access application via browser or curl:
-```
+```bash
 $ curl http-server.local.
 Well, hello there!
 ```
