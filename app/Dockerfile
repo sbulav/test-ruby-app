@@ -2,7 +2,7 @@
 FROM ruby:3.0.1-alpine
 
 # Add curl for health probes
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl=7.77.0-r0
 
 # Create a non-root user to run the app and own app-specific files
 RUN adduser -D app
