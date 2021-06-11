@@ -36,7 +36,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v3
       with:
-        images: zppfan/http-server
+        images: ${{ secrets.DOCKERHUB_USERNAME }}/http-server
         tags: |
           type=ref,event=branch
           type=ref,event=pr
