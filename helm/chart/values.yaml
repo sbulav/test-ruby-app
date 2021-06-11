@@ -1,8 +1,8 @@
-replicaCount: 1
+replicaCount: 3
 
 image:
   repository: zppfan/http-server
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: latest
 
 imagePullSecrets: []
@@ -11,16 +11,16 @@ fullnameOverride: ""
 
 podAnnotations: {}
 
-podSecurityContext: {}
-  # fsGroup: 2000
+podSecurityContext:
+  fsGroup: 1000
 
-securityContext: {}
+securityContext:
   # capabilities:
   #   drop:
   #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
 
 service:
   type: NodePort
@@ -52,13 +52,6 @@ resources:
   requests:
     cpu: 100m
     memory: 32Mi
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 
