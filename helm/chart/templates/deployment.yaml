@@ -42,7 +42,7 @@ spec:
               command:
               - sh
               - -c
-              - curl -s http://localhost/healthcheck | grep -i ok
+              - curl -s --http0.9 http://localhost/healthcheck | grep -i ok
             initialDelaySeconds: 10
             periodSeconds: 5
             successThreshold: 1
@@ -52,7 +52,7 @@ spec:
               command:
               - sh
               - -c
-              - curl -s http://localhost | grep -i hello
+              - curl -s --http0.9 http://localhost | grep -i hello
             initialDelaySeconds: 5
             periodSeconds: 5
             timeoutSeconds: 10
